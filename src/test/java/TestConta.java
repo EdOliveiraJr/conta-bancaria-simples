@@ -74,7 +74,7 @@ public class TestConta{
     public void depositosEmContasComLimiteUtilizadoDevemRestaurarOLimite(){
         conta.sacar(2100);
         assertTrue(conta.depositar(50), "Depositar valores positivos sao permitidos");
-        assertEquals( 50, conta.getSaldo(), 0.01, "O saldo nao atualizado corretamente");
+        assertEquals(50, conta.getSaldo(), 0.01, "O saldo nao atualizado corretamente");
         assertEquals(50, conta.getLimite(), 0.01, "Limite nao restaurado");
 
         assertTrue(conta.depositar(100), "Depositar valores positivos sao permitidos");
