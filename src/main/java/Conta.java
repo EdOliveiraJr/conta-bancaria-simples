@@ -33,29 +33,29 @@ public class Conta {
     }
 
     public boolean sacar(double valor) {
-        if(valor > this.saldo || valor < 0.00){
+        if(valor > saldo || valor < 0.00){
             System.out.println("Erro " + valor);
             return false;
-        }else if(valor == this.saldo){
-            this.saldo -= valor;
-            this.saldoSemLimite = 0.0;
-            this.limite = 0.0;
+        }else if(valor == saldo){
+            saldo -= valor;
+            saldoSemLimite = 0.0;
+            limite = 0.0;
             setExtrato(-valor);
             System.out.println("Sacou " + valor);
             visao();   
             return true;
         }else{
             if(valor <= saldoSemLimite){
-                this.saldoSemLimite -= valor;
-                this.saldo -= valor;
+                saldoSemLimite -= valor;
+                saldo -= valor;
                 setExtrato(-valor);
                 System.out.println("Sacou " + valor);
                 visao();
                 return true;
             }else{
-                this.limite -= valor - this.saldoSemLimite;
-                this.saldoSemLimite = 0.00;
-                this.saldo -= valor;
+                limite -= valor - saldoSemLimite;
+                saldoSemLimite = 0.00;
+                saldo -= valor;
                 setExtrato(-valor);
                 System.out.println("Sacou " + valor);
                 visao();
